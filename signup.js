@@ -1,3 +1,4 @@
+
 async function handleSigninButton() {
     const response = await handleSignin();
 
@@ -7,3 +8,5 @@ async function handleSigninButton() {
     }
 
 }
+
+checkLogin();

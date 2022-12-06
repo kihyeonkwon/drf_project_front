@@ -95,3 +95,11 @@ function handleLogout() {
     location.reload()
 
 }
+
+function checkLogin() {
+    const payload = localStorage.getItem("payload");
+    if (payload) {
+        window.location.replace(`${frontend_base_url}/`)
+    }
+}
+
