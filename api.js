@@ -77,7 +77,7 @@ async function handleLogin() {
 
 
 async function handleMock() {
-    const response = await fetch('http://127.0.0.1:8000/users/mock/', {
+    const response = await fetch(`${backend_base_url}/users/mock/`, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("access")
         },
@@ -103,3 +103,14 @@ function checkLogin() {
     }
 }
 
+async function getArticles() {
+    const response = await fetch(`${backend_base_url}/articles/`)
+
+
+    if (response.status == 200) {
+        const response_json = await response.json()
+        return response_json
+    } else {
+        alert("불러오는데 실패했습니다")
+    }
+}
