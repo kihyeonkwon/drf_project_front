@@ -150,3 +150,16 @@ async function postArticle() {
 
 
 }
+
+
+async function getArticle(articleId) {
+    const response = await fetch(`${backend_base_url}/articles/${articleId}/`,
+    )
+
+    if (response.status == 200) {
+        response_json = await response.json()
+        return response_json
+    } else {
+        alert(response.status)
+    }
+}

@@ -1,5 +1,10 @@
 console.log("index.js 로드")
 
+function articleDetail(article_id) {
+    window.location.href = `${frontend_base_url}/article_detail.html?article_id=${article_id}`
+}
+
+
 window.onload = async function loadArticles() {
     articles = await getArticles()
     console.log(articles)
@@ -9,6 +14,8 @@ window.onload = async function loadArticles() {
     articles.forEach(article => {
         const newCol = document.createElement("div");
         newCol.setAttribute("class", "col")
+        newCol.setAttribute("onclick", `articleDetail(${article.pk})`)
+
         const newCard = document.createElement("div")
         newCard.setAttribute("class", "card")
         newCard.setAttribute("id", article.pk)

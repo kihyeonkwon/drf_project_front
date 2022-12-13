@@ -19,6 +19,19 @@ async function injectNavbar() {
         const intro = document.getElementById("intro")
         intro.innerText = `${payload_parse.email}님 안녕하세요`
 
+        let navbarLeft = document.getElementById("navbar-left")
+        let articleCreateLi = document.createElement("li")
+        articleCreateLi.setAttribute("class", 'nav-item')
+
+
+        let articleCreateLink = document.createElement("a")
+        articleCreateLink.setAttribute("href", "/article_create.html")
+        articleCreateLink.setAttribute("class", "nav-link")
+        articleCreateLink.innerHTML = "글 작성"
+
+        articleCreateLi.appendChild(articleCreateLink);
+        navbarLeft.appendChild(articleCreateLi)
+
 
         let navbarRight = document.getElementById("navbar-right")
         let newLi = document.createElement("li")
